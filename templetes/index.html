@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Firewall Rule Simulator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <style>
+        body {
+            padding:140pt 50pt 50pt 410pt;
+            background-color:#1f1e1e;
+            color:white;
+            }
+    </style>
+</head>
+<body>
 
+    <h2>Firewall Rule Simulator</h2>
+    <form method="POST">
+        <label for="src_ip">Source IP:</label>
+        <input type="text" name="src_ip" id ="src_ip"required><br><br>
+        <label for="dst_ip">Destination IP:</label>
+        <input type="text" name="dst_ip" id= "dst_ip" required><br><br>
+        <label for=port>Port:</label>
+        <input type="number" name="port" id="port" required><br><br>
+        <label for = protocol>Protocol:</label>
+        <select name="protocol" id= "protocol">
+            <option value="TCP">TCP</option>
+            <option value="UDP">UDP</option>
+            <option value="ICMP">ICMP</option>
+        </select><br><br>
+        <input type="submit" value="Simulate Packet">
+    </form>
+
+    {% if result %}
+        <h3>Result:</h3>
+        <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>
